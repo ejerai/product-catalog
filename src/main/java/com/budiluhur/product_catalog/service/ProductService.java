@@ -11,10 +11,12 @@ import com.budiluhur.product_catalog.repository.ProductRepository;
 @Service
 public class ProductService {
     private final ProductRepository productRepository;
+    private final DiscountService discountService;
 
-    // Constructor Injection: Spring yang mengisi productRepository
-    public ProductService(ProductRepository productRepository) {
+    // Constructor Injection untuk dua dependency sekaligus
+    public ProductService(ProductRepository productRepository, DiscountService discountService) {
         this.productRepository = productRepository;
+        this.discountService = discountService;
     }
 
     public List<Product> getAllProducts() {
@@ -28,5 +30,10 @@ public class ProductService {
     public Product createProduct(Product product) {
         productRepository.addProduct(product);
         return product;
+    }
+
+    public double getDiscountedProductPrice(String id, double discount) throws ProductNotFoundException {
+        Product product = productRepository.findById(id);
+        return discountService.calculateDiscountedPrice(product.getPrice(), discount);
     }
 }
