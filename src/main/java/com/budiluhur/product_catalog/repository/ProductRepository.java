@@ -46,4 +46,15 @@ public class ProductRepository {
         Product existingProduct = findById(id);
         return productList.remove(existingProduct);
     }
+
+    // pencarian
+    public List<Product> searchByName(String keyword) {
+        List<Product> hasil = new ArrayList<>();
+        for (Product p : productList) {
+            if (p.getName().toLowerCase().contains(keyword.toLowerCase())) {
+                hasil.add(p);
+            }
+        }
+        return hasil;
+    }
 }

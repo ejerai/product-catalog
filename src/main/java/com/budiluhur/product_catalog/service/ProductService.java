@@ -13,7 +13,7 @@ public class ProductService {
     private final ProductRepository productRepository;
     private final DiscountService discountService;
 
-    // Constructor Injection untuk dua dependency sekaligus
+    // Constructor Injection
     public ProductService(ProductRepository productRepository, DiscountService discountService) {
         this.productRepository = productRepository;
         this.discountService = discountService;
@@ -43,5 +43,10 @@ public class ProductService {
 
     public boolean deleteProduct(String id) throws ProductNotFoundException {
         return productRepository.deleteById(id);
+    }
+
+    // pencarian
+    public List<Product> searchProducts(String keyword) {
+        return productRepository.searchByName(keyword);
     }
 }
