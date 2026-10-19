@@ -1,0 +1,15 @@
+$kind: http-request
+name: "{{base_url}}/api/products/PRD-01"
+description: ""
+url: "{{base_url}}/api/products/PRD-01"
+method: PUT
+body:
+  type: json
+  content: "{\r
+
+    \  \"name\": \"Keyboard Mechanical RGB\",\r
+
+    \  \"price\": 550000.0\r
+
+    }"
+order: 5000

@@ -1,0 +1,6 @@
+$kind: http-request
+name: "{{base_url}}/api/products/PRD-99"
+description: ""
+url: "{{base_url}}/api/products/PRD-99"
+method: GET
+order: 4000

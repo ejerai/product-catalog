@@ -4,7 +4,10 @@ public class Product {
     private String id;
     private String name;
     private double price;
-    
+
+    public Product() {
+    }
+
     public Product(String id, String name, double price) {
         this.id = id;
         this.name = name;
@@ -19,11 +22,19 @@ public class Product {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public double getPrice() {
         return price;
     }
 
-    @Override 
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    @Override
     public String toString() {
         return "[" + id + "] " + name + " - Rp" + price;
     }

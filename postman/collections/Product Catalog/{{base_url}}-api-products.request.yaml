@@ -1,0 +1,17 @@
+$kind: http-request
+name: "{{base_url}}/api/products"
+description: ""
+url: "{{base_url}}/api/products"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"id\": \"PRD-04\",\r
+
+    \  \"name\": \"Headset Gaming\",\r
+
+    \  \"price\": 1000000.0\r
+
+    }"
+order: 2000
