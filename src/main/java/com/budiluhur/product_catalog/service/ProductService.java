@@ -52,4 +52,9 @@ public class ProductService {
         Product product = getProductById(id);
         return discountService.calculateDiscountedPrice(product.getPrice(), discount);
     }
+
+        // search product
+    public List<Product> searchProducts(String keyword) {
+        return productRepository.findByNameContainingIgnoreCase(keyword);
+    }
 }
